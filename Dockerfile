@@ -22,5 +22,8 @@ COPY . .
 # build app for production with minification
 RUN npm run build
 
-EXPOSE 8080
-CMD [ "http-server", "dist" ]
+FROM djoewie/oslo-simple-server:v0.3.0
+
+COPY --from=0 /app/dist /usr/src/app/dist
+#for testing perpose
+#COPY --from=0 /app/dist /usr/src/app/dist/tools/playground

@@ -10,7 +10,7 @@ Vue.use(Router);
 */
 const router = new Router({
     mode: 'history',
-    base: '/playground/',
+    base: '/tools/playground/',
     routes: [
         {
             path: '/',
